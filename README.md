@@ -4,11 +4,41 @@ This repository contains a three-tier application built using Docker, utilizing 
 
 ## Architecture Overview
 
-![Three-Tier Architecture](5.png)
+![5](https://github.com/kathan-shah1893/IA/assets/136159210/f434097f-4ec7-48c8-a3f0-e70025e0bb18))
 
 - **Presentation Layer**: Responsible for presenting information to the user. Built with HTML, CSS, and JavaScript.
 - **Application Layer**: Contains the business logic and functionality of the application. Built with JAVA.
 - **Data Layer**: Stores and manages the data used by the application. Utilizes MYSQL.
+
+## Prerequisites
+- JDK 1.8 or later
+- Maven 3 or later
+- MySQL 5.6 or later
+
+## Technologies 
+- Spring MVC
+- Spring Security
+- Spring Data JPA
+- Maven
+- JSP
+- MySQL
+
+## Database Setup
+### Installation Steps for MySQL on Ubuntu 14.04
+```bash
+sudo apt-get update
+sudo apt-get install mysql-server
+```
+### Importing Database Dump
+1. Locate the `accountsdb.sql` file in the `/src/main/resources` directory.
+2. This file contains a MySQL dump of the database schema and data.
+3. Run the following command to import the dump into the MySQL database:
+```bash
+mysql -u <user_name> -p accounts < accountsdb.sql
+```
+Replace `<user_name>` with your MySQL username. You will be prompted to enter your MySQL password after running this command.
+
+
 
 ## Getting Started
 
@@ -49,34 +79,6 @@ Follow these steps to run the three-tier application locally:
     ```
     http://localhost:3000
     ```
-
-## Prerequisites
-- JDK 1.8 or later
-- Maven 3 or later
-- MySQL 5.6 or later
-
-## Technologies 
-- Spring MVC
-- Spring Security
-- Spring Data JPA
-- Maven
-- JSP
-- MySQL
-
-## Database Setup
-### Installation Steps for MySQL on Ubuntu 14.04
-```bash
-sudo apt-get update
-sudo apt-get install mysql-server
-```
-### Importing Database Dump
-1. Locate the `accountsdb.sql` file in the `/src/main/resources` directory.
-2. This file contains a MySQL dump of the database schema and data.
-3. Run the following command to import the dump into the MySQL database:
-```bash
-mysql -u <user_name> -p accounts < accountsdb.sql
-```
-Replace `<user_name>` with your MySQL username. You will be prompted to enter your MySQL password after running this command.
 
 
 ## Author

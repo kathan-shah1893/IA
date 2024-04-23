@@ -92,14 +92,13 @@ Follow these steps to run the three-tier application locally:
         CMD ["catalina.sh","run"]
     
     ```
-    5. Nginx Dockerfile:
+ 5. Nginx Dockerfile:
     ```bash
         FROM nginx
         RUN rm /etc/nginx/conf.d/default.conf
         COPY nginvproapp.conf /etc/nginx/conf.d/
     ```
-
-      6. Docker-compose.yml file:
+ 6. Docker-compose.yml file:
     ```bash
     ## Docker-compose.yml file
 
@@ -144,6 +143,7 @@ volumes:
   vproappdata:
 
     ```
+```
 
 7. Build the Docker images
 

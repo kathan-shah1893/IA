@@ -4,7 +4,7 @@ This repository contains a three-tier application built using Docker, utilizing 
 
 ## Architecture Overview
 
-![Three-Tier Architecture](![5](https://github.com/kathan-shah1893/IA/assets/136159210/f434097f-4ec7-48c8-a3f0-e70025e0bb18))
+![Three-Tier Architecture]![5](https://github.com/kathan-shah1893/IA/assets/136159210/f434097f-4ec7-48c8-a3f0-e70025e0bb18)
 
 - **Presentation Layer**: Responsible for presenting information to the user. Built with HTML, CSS, and JavaScript.
 - **Application Layer**: Contains the business logic and functionality of the application. Built with JAVA.

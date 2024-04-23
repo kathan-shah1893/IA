@@ -99,9 +99,6 @@ Follow these steps to run the three-tier application locally:
         COPY nginvproapp.conf /etc/nginx/conf.d/
     ```
  6. Docker-compose.yml file:
-    ```bash
-    ## Docker-compose.yml file
-
 ```yaml
 version: '3.8'
 services:
@@ -141,8 +138,6 @@ services:
 volumes:
   vprodbdata:
   vproappdata:
-
-    ```
 ```
 
 7. Build the Docker images

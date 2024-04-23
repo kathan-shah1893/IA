@@ -4,7 +4,7 @@ This repository contains a three-tier application built using Docker, utilizing 
 
 ## Architecture Overview
 
-![Three-Tier Architecture](architecture_diagram.png)
+![Three-Tier Architecture](5.png)
 
 - **Presentation Layer**: Responsible for presenting information to the user. Built with HTML, CSS, and JavaScript.
 - **Application Layer**: Contains the business logic and functionality of the application. Built with JAVA.
@@ -23,13 +23,13 @@ Follow these steps to run the three-tier application locally:
 1. Clone this repository to your local machine:
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/kathan-shah1893/IA.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd <project_directory>
+    cd IA
     ```
 
 3. Build the Docker images:
@@ -49,14 +49,6 @@ Follow these steps to run the three-tier application locally:
     ```
     http://localhost:3000
     ```
-
-## Author
-
-- [Your Name](https://github.com/your_github_username)
-
-## Acknowledgements
-
-- This project is inspired by [Original Author's Name](https://github.com/original_author) and their work on [Original Project Name](https://github.com/original_project).
 
 ## Prerequisites
 - JDK 1.8 or later
@@ -85,3 +77,12 @@ sudo apt-get install mysql-server
 mysql -u <user_name> -p accounts < accountsdb.sql
 ```
 Replace `<user_name>` with your MySQL username. You will be prompted to enter your MySQL password after running this command.
+
+
+## Author
+
+- [Kathan shsh](https://github.com/Kathan_shha1893)
+
+## Acknowledgements
+
+- This project is inspired by [Imran teli](https://github.com/hkhcoder/vprofile-project) and their work on (https://github.com/hkhcoder/vprofile-project).

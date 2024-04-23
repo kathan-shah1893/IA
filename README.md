@@ -63,19 +63,98 @@ Follow these steps to run the three-tier application locally:
     cd IA
     ```
 
-3. Build the Docker images:
+3. Database Dockerfile:
+
+    ```bash
+    
+        FROM mysql:8.0.33
+        LABEL "PROJECT"="VPROFILE"
+        LABEL "AUTHOR"="KATHAN"
+
+        ENV MYSQL_ROOT_PASSWORD="vprodbpass"
+        ENV MYSQL_DATABASE="accounts"
+
+        ADD db_backup.sql docker-entrypoint-initdb.d/db_backup.sql
+    
+    ```
+4. OpenJDK Dockerfile:
+    ```bash
+    
+        FROM openjdk:11 AS BUILD_IMAGE
+        RUN apt update && apt install maven -y
+        RUN git clone https://github.com/devopshydclub/vprofile-project.git
+        RUN cd vprofile-project && git checkout docker &&  mvn install
+
+        FROM tomcat:9-jre11
+        RUN rm -rf /usr/local/tomcat/webapps/*
+        COPY --from=BUILD_IMAGE vprofile-project/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
+        EXPOSE 8080
+        CMD ["catalina.sh","run"]
+    
+    ```
+    5. Nginx Dockerfile:
+    ```bash
+        FROM nginx
+        RUN rm /etc/nginx/conf.d/default.conf
+        COPY nginvproapp.conf /etc/nginx/conf.d/
+    ```
+
+      6. Docker-compose.yml file:
+    ```bash
+        
+        version: '3.8'
+services:
+  vprodb:
+    build: ./Docker-files/db
+    image: vprocontainers/vprofiledb
+    container_name: vprodb
+    ports:
+      - "3306:3306"
+    volumes:
+      - vprodbdata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWROD=vprodbpass
+  vprocache01:
+    image: memcached
+    ports:
+      - "11211:11211"
+  vpromq01:
+    image: rabbitmq
+    ports:
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+  vproapp:
+    build: ./Docker-files/app
+    container_name: vproapp
+    ports:
+      - "8080:8080"
+    volumes:
+      - vproappdata:/usr/local/tomcat/webapps
+  vproweb:
+    build: ./Docker-files/web
+    container_name: vproweb
+    ports:
+      - "80:80"
+volumes:
+  vprodbdata:
+  vproappdata:    
+    ```
+
+7. Build the Docker images
 
     ```bash
     docker-compose build
     ```
 
-4. Start the Docker containers:
+8. Start the Docker containers:
 
     ```bash
     docker-compose up -d
     ```
 
-5. Access the application in your web browser:
+9. Access the application in your web browser:
 
     ```
     http://localhost:3000

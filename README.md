@@ -84,7 +84,7 @@ Follow these steps to run the three-tier application locally:
 
 ## Author
 
-- [Kathan shsh](https://github.com/Kathan_shha1893)
+- [Kathan shsh](https://github.com/Kathan-shah1893)
 
 ## Acknowledgements
 

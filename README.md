@@ -101,8 +101,10 @@ Follow these steps to run the three-tier application locally:
 
       6. Docker-compose.yml file:
     ```bash
-        
-        version: '3.8'
+    ## Docker-compose.yml file
+
+```yaml
+version: '3.8'
 services:
   vprodb:
     build: ./Docker-files/db
@@ -139,7 +141,8 @@ services:
       - "80:80"
 volumes:
   vprodbdata:
-  vproappdata:    
+  vproappdata:
+
     ```
 
 7. Build the Docker images

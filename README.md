@@ -169,7 +169,7 @@ docker pull kathanshah1893/myvprofileapp
 ```
 ## Author
 
-- [Kathan shsh](https://github.com/Kathan-shah1893)
+- [Kathan shah](https://github.com/Kathan-shah1893)
 
 ## Acknowledgements
 

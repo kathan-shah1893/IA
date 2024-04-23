@@ -159,6 +159,14 @@ volumes:
     ```
 
 
+
+## Docker Image
+
+You can pull the Docker image from Docker Hub using the following command:
+
+```bash
+docker pull kathanshah1893/myvprofileapp
+
 ## Author
 
 - [Kathan shsh](https://github.com/Kathan-shah1893)
